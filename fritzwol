@@ -57,12 +57,12 @@ sub err_exit($) {
 }
 
 if (!$remote_user) {
-    printf("username for %s at %s: ", $box_id, $url);
+    printf("username for %s (%s): ", $box_id, $url);
     chomp($remote_user = ReadLine(0));
 }
 
 ReadMode('noecho');
-printf("password for %s at %s: ", $box_id, $url);
+printf("password for %s at %s (%s): ", $remote_user, $box_id, $url);
 chomp($remote_pass = ReadLine(0));
 ReadMode('restore');
 
